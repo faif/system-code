@@ -1,0 +1,14 @@
+push   %ebp
+mov    %esp,%ebp
+and    $0xfffffff0,%esp
+sub    $0x20,%esp   
+movl   $0x0,0x1c(%esp)
+jmp    24 <main+0x24>
+movl   $0x0,(%esp)
+call   1b <main+0x1b>
+addl   $0x1,0x1c(%esp)
+cmpl   $0x9,0x1c(%esp)
+jle    13 <main+0x13>
+mov    $0x0,%eax
+leave  
+ret    
